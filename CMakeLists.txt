@@ -11,7 +11,7 @@ file(GLOB_RECURSE SOURCES  "lv_drivers/*.c" "lv_demos/*.c"  "lvgl/*.c" "TEST/gen
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 SET(CMAKE_CXX_FLAGS "-O3")
-SET(SDL2_DIR F:/SDL2-2.28.5/x86_64-w64-mingw32/lib/cmake/SDL2/)
+SET(SDL2_DIR D:/mingw64/lib/cmake/SDL2)
 find_package(SDL2 REQUIRED SDL2)
 include_directories(${SDL2_INCLUDE_DIRS})
 add_executable(main main.c mouse_cursor_icon.c ${SOURCES} ${INCLUDES}
@@ -29,5 +29,5 @@ add_executable(main main.c mouse_cursor_icon.c ${SOURCES} ${INCLUDES}
         H_tarck/SysIfo.h
 )
 add_compile_definitions(LV_CONF_INCLUDE_SIMPLE)
-target_link_libraries(main PRIVATE SDL2 )
+target_link_libraries(main PRIVATE SDL2)
 add_custom_target (run COMMAND ${EXECUTABLE_OUTPUT_PATH}/main)
